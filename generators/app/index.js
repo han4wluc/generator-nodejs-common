@@ -4,28 +4,28 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
-  prompting: function () {
-    var done = this.async();
+  // prompting: function () {
+  //   var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the kryptonian ' + chalk.red('NodejsCommon') + ' generator!'
-    ));
+  //   // Have Yeoman greet the user.
+  //   this.log(yosay(
+  //     'Welcome to the kryptonian ' + chalk.red('NodejsCommon') + ' generator!'
+  //   ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+  //   var prompts = [{
+  //     type: 'confirm',
+  //     name: 'someOption',
+  //     message: 'Would you like to enable this option?',
+  //     default: true
+  //   }];
 
-    this.prompt(prompts, function (props) {
-      this.props = props;
-      // To access props later use this.props.someOption;
+  //   this.prompt(prompts, function (props) {
+  //     this.props = props;
+  //     // To access props later use this.props.someOption;
 
-      done();
-    }.bind(this));
-  },
+  //     done();
+  //   }.bind(this));
+  // },
 
   writing: {
     app: function () {
@@ -33,10 +33,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
+      // this.fs.copy(
+      //   this.templatePath('_bower.json'),
+      //   this.destinationPath('bower.json')
+      // );
     },
 
     projectfiles: function () {
@@ -44,6 +44,10 @@ module.exports = yeoman.generators.Base.extend({
       //   this.templatePath('editorconfig'),
       //   this.destinationPath('.editorconfig')
       // );
+      this.fs.copy(
+        this.templatePath('_index.js'),
+        this.destinationPath('index.js')
+      );
       this.fs.copy(
         this.templatePath('config/_env.json'),
         this.destinationPath('config/env.json')
@@ -57,9 +61,10 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('.jshintrc')
       );
     }
-  },
-
-  install: function () {
-    this.installDependencies();
   }
+  // ,
+
+  // install: function () {
+  //   this.installDependencies();
+  // }
 });

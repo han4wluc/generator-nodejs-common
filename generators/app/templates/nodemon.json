@@ -1,0 +1,5 @@
+{
+  "events": {
+    "restart": "sleep 1.5; npm test"
+  }
+}
