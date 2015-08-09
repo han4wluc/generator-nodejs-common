@@ -11,8 +11,7 @@
     "url": "https://github.com/han4wluc"
   },
   "scripts": {
-    "start": "nodemon index.js -w app/* --delay 1.5",
-    "test": "mocha app/**/*.spec.js"
+    "test": "mocha"
   },
   "files": [
     "generators"
@@ -21,9 +20,8 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "chalk": "^1.0.0",
-    "lodash": "^3.10.1",
     "yeoman-generator": "^0.19.0",
+    "chalk": "^1.0.0",
     "yosay": "^1.0.2"
   },
   "devDependencies": {

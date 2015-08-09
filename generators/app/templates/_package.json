@@ -11,7 +11,8 @@
     "url": ""
   },
   "scripts": {
-    "test": "mocha"
+    "start": "nodemon index.js -w app/* --delay 1.5",
+    "test": "mocha app/**/*.spec.js"
   },
   "keywords": [
     ""
