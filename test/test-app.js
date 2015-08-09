@@ -15,7 +15,6 @@ describe('nodejs-common:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'bower.json',
       'package.json',
       '.jshintrc'
     ]);
